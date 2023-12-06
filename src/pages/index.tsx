@@ -54,7 +54,7 @@ export default function Home() {
     useForm();
 
   const stamper = new WebauthnStamper({
-    rpId: "localhost",
+    rpId: process.env.NEXT_PUBLIC_RPID!,
   });
 
   const passkeyHttpClient = new TurnkeyClient(
@@ -222,7 +222,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-            Wallet
+              Wallet
             </a> within it.
             <br />
             <br />
