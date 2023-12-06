@@ -120,6 +120,9 @@ export default function Home() {
           name: subOrgName,
           displayName: subOrgName,
         },
+        authenticatorSelection: {
+          requireResidentKey: true,
+        }
       },
     });
 
