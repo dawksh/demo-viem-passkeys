@@ -53,7 +53,6 @@ export default function Home() {
   const { register: _loginFormRegister, handleSubmit: loginFormSubmit } =
     useForm();
 
-  console.log("process.env.NEXT_PUBLIC_RPID", process.env.NEXT_PUBLIC_RPID);
 
   const stamper = new WebauthnStamper({
     rpId: process.env.NEXT_PUBLIC_RPID!,
@@ -102,7 +101,7 @@ export default function Home() {
     const attestation = await getWebAuthnAttestation({
       publicKey: {
         rp: {
-          id: "localhost",
+          id: process.env.NEXT_PUBLIC_RPID!,
           name: "Turnkey Viem Passkey Demo",
         },
         challenge,
